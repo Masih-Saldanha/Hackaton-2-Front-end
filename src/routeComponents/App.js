@@ -9,7 +9,7 @@ export default function App() {
             <BrowserRouter>
             <Routes>
                 <Route path="/" element={<StartScreen/>} > </Route>
-                <Route path="/qustions" element={<QuestionScreen/>} > </Route>
+                <Route path="/questions" element={<QuestionScreen/>} > </Route>
                 <Route path="/videos" element={<VideoScreen/>} > </Route>
                 <Route path="/result" element={<Result/>} > </Route>
             </Routes>
