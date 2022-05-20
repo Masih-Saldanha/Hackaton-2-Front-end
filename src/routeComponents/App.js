@@ -4,6 +4,8 @@ import Result from "./Result";
 import StartScreen from "./StartScreen";
 import VideoScreen from "./VideoScreen";
 
+import "../assets/styles/reset.css"
+
 export default function App() {
     return (
             <BrowserRouter>
