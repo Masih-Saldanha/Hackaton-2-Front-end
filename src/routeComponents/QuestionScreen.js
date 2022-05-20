@@ -22,13 +22,13 @@ export default function QuestionScreen() {
                 questions.map((question, index) => {
                     return(
                         <ul className = "box">
-                            <li className="image">{question.image}</li>
+                            <img className="image" src={question.image}/>
                             <li>Pergunta n° {index}</li>
                             <li className="text">{question.question}</li>
-                            {question.answers.map(answer => {
+                            {question.answers.map((answer, index) => {
                                 return(
                                     <ul className="box-options">
-                                        <li className="options">{answer.answer}</li>
+                                        <li className="option">{index}  {answer.answer}</li>
                                     </ul>
                                 )
                             })}
@@ -46,24 +46,41 @@ const ContainerQuestions = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 500px;
+    margin: auto;
 
 
     .image{
-        width: 100px;
-        height: 100px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        width: 200px;
+        height: 200px;
     }
 
     .text{
-        width: 450px;
-        height: 50px;
-        background: red;
+        margin-bottom: 10px;
+        padding: 25px;
     }
 
     .box{
         list-style-type: none;
         display: flex;
+        align-items: center;
         flex-direction: column;
+        margin-bottom: 50px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .option{
+        width: 500px;
+        height: 50px;
+        padding-left: 25px;
+        padding-right: 25px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
     }
 
 
