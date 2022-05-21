@@ -63,6 +63,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #EBEBEB;
+    font-family: 'Signika', sans-serif;
+    width: 100vw;
+    height: 100vh;
 `
 
 const Topo = styled.div`
