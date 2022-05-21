@@ -1,15 +1,13 @@
 import styled from "styled-components"
 import { useNavigate } from "react-router"
+import Top from "./Top";
 
 export default function StartScreen() {
     const navigate = useNavigate();
 
     return (
         <Container>
-            <Topo>
-                <p>EasyDetran</p>
-                <ion-icon name="book-outline"></ion-icon>
-            </Topo>
+            <Top/>
             <Botoes>
                 <h1>O que você deseja?</h1>
                 <button onClick={() => navigate("/videos")}>
@@ -49,26 +47,4 @@ const Botoes = styled.div`
     align-items: center;
     justify-content: space-around;
     width: 100vw;
-`
-
-const Topo = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
-    width: 100vw;
-    background: #4772A5;
-    position: absolute;
-    right: 0;
-    top: 0;
-    left: 0;
-    p{
-        font-size: 48px;
-        color: white;
-        margin-right: 5px;
-    }
-    ion-icon{
-        font-size: 40px;
-        color: white;
-    }
 `

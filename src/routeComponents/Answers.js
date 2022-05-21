@@ -14,6 +14,6 @@ export default function Answers({answer, index, setClick}){
     }
 
     return(
-        <li className={`option ${css}`} onClick={()=>select(answer)}>{index}  {answer.answer}</li>
+        <li className={`option ${css}`} onClick={()=>select(answer)}>{index + 1}  {answer.answer}</li>
     )
 }

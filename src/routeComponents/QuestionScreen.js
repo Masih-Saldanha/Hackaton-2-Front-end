@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import Answers from "./Answers";
 import Question from "./Question";
+import Top from "./Top";
+
 
 export default function QuestionScreen() {
     const url = "https://hackaton-2-aipim.herokuapp.com/questions"
@@ -19,15 +20,18 @@ export default function QuestionScreen() {
     }, [])
 
     return (
-        <ContainerQuestions>
-            {
-                questions.map((question, index) => {
-                    return (
-                        <Question question={question} index={index}/>
-                    )
-                })
-            }
-        </ContainerQuestions>
+        <>
+        <Top/>
+            <ContainerQuestions>
+                {
+                    questions.map((question, index) => {
+                        return (
+                            <Question question={question} index={index = 1}/>
+                            )
+                        })
+                    }
+            </ContainerQuestions>
+        </>
     )
 }
 
@@ -39,6 +43,7 @@ const ContainerQuestions = styled.main`
     justify-content: center;
     width: 500px;
     margin: auto;
+    margin-top: 150px;
 
 
     .image{
@@ -59,6 +64,7 @@ const ContainerQuestions = styled.main`
         align-items: center;
         flex-direction: column;
         margin-bottom: 50px;
+        border-radius: 5px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     }
 
@@ -75,11 +81,13 @@ const ContainerQuestions = styled.main`
     }
 
     .correct{
+        background: #00FF7F;
         border: 2px solid green;
     }
 
     .err{
-        border: 2px solid red;
+        background: red;
+        border: 2px solid #800000;
     }
 
     .click{
