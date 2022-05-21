@@ -1,11 +1,16 @@
+import { useContext } from "react";
 import styled from "styled-components"
 import { useNavigate } from "react-router"
 
+import ResultContext from "./../contexts/ResultContext.js";
+
 export default function Result() {
+    const {result} = useContext(ResultContext);
+
     const navigate = useNavigate();
 
-    const total = 8;
-    let aux = 8;
+    const total = 10;
+    let aux = result;
 
     function calculateResult(rights){
         return rights/total;
@@ -63,18 +68,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    button{
-        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-        border: none;
-        width: 200px;
-        height: 45px;
-        border-radius: 10px;
-        cursor: pointer;
-        &:hover{
-            background-color: #EBEBEB;
-        }
-        margin: 10px 0;
-    }
+    background-color: #EBEBEB;
+    font-family: 'Signika', sans-serif;
+    width: 100vw;
+    height: 100vh;
 `
 
 const Topo = styled.div`
@@ -83,7 +80,7 @@ const Topo = styled.div`
     justify-content: center;
     height: 120px;
     width: 100vw;
-    background: #4772A5;
+    background: #0097F6;
     position: absolute;
     right: 0;
     top: 0;
@@ -99,12 +96,29 @@ const Topo = styled.div`
     }
 `
 const Botoes = styled.div`
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     width: 100vw;
+
+    button{
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        border: none;
+        width: 200px;
+        height: 45px;
+        color: #444040;
+        font-size: 16px;
+        border-radius: 10px;
+        background-color: white;
+        font-family: 'Signika', sans-serif;
+        cursor: pointer;
+        &:hover{
+            background-color: #EBEBEB;
+        }
+        margin: 10px 0;
+    }
 `
 
 const Resultado = styled.div`

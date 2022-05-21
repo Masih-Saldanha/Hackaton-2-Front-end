@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
 import Question from "./Question";
 import Top from "./Top";
 
 
+import ResultContext from "./../contexts/ResultContext.js";
+
 export default function QuestionScreen() {
+    const { count } = useContext(ResultContext);
     const url = "https://hackaton-2-aipim.herokuapp.com/questions"
     const [questions, setQuestions] = useState([])
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         const promisse = axios.get(url);
@@ -18,6 +22,10 @@ export default function QuestionScreen() {
         })
         promisse.catch(err => alert("Não consegui carregar as perguntas"))
     }, [])
+
+    if (count === 10) {
+        navigate("/result")
+    }
 
     return (
         <>
