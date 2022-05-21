@@ -1,11 +1,16 @@
+import { useContext } from "react";
 import styled from "styled-components"
 import { useNavigate } from "react-router"
 
+import ResultContext from "./../contexts/ResultContext.js";
+
 export default function Result() {
+    const {result} = useContext(ResultContext);
+
     const navigate = useNavigate();
 
-    const total = 8;
-    let aux = 8;
+    const total = 10;
+    let aux = result;
 
     function calculateResult(rights){
         return rights/total;
