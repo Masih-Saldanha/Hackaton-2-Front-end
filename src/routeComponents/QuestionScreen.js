@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import Answers from "./Answers";
+import Question from "./Question";
 
 export default function QuestionScreen() {
     const url = "https://hackaton-2-aipim.herokuapp.com/questions"
-    const [ questions, setQuestions ] = useState([])
+    const [questions, setQuestions] = useState([])
 
 
     useEffect(() => {
@@ -20,19 +22,8 @@ export default function QuestionScreen() {
         <ContainerQuestions>
             {
                 questions.map((question, index) => {
-                    return(
-                        <ul className = "box">
-                            <img className="image" src={question.image}/>
-                            <li>Pergunta n° {index}</li>
-                            <li className="text">{question.question}</li>
-                            {question.answers.map((answer, index) => {
-                                return(
-                                    <ul className="box-options">
-                                        <li className="option">{index}  {answer.answer}</li>
-                                    </ul>
-                                )
-                            })}
-                        </ul>
+                    return (
+                        <Question question={question} index={index}/>
                     )
                 })
             }
@@ -81,6 +72,18 @@ const ContainerQuestions = styled.main`
         margin-bottom: 10px;
         border: 2px solid black;
         border-radius: 5px;
+    }
+
+    .correct{
+        border: 2px solid green;
+    }
+
+    .err{
+        border: 2px solid red;
+    }
+
+    .click{
+        pointer-events: none;
     }
 
 
