@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import QuestionScreen from "./QuestionScreen";
 import Result from "./Result";
@@ -8,11 +8,12 @@ import VideoScreen from "./VideoScreen";
 import "../assets/styles/reset.css"
 import ResultContext from "./../contexts/ResultContext.js";
 
-const [result, setResult] = useContext(0);
 
 export default function App() {
+    const [result, setResult] = useState(0);
+    const [count, setCount] = useState(0);
     return (
-        <ResultContext.Provider value={{ result, setResult }}>
+        <ResultContext.Provider value={{ result, setResult, count, setCount }}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<StartScreen />} > </Route>
