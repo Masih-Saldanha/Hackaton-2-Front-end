@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
+import ResultContext from "./../contexts/ResultContext.js";
+
 export default function QuestionScreen() {
+    const {setResult} = useContext(ResultContext);
+
     const url = "https://hackaton-2-aipim.herokuapp.com/questions"
     const [ questions, setQuestions ] = useState([])
 
