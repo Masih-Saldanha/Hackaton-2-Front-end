@@ -10,8 +10,8 @@ export default function StartScreen() {
                 <p>EasyDetran</p>
                 <ion-icon name="book-outline"></ion-icon>
             </Topo>
+            <h1>O que você deseja fazer?</h1>
             <Botoes>
-                <h1>O que você deseja?</h1>
                 <button onClick={() => navigate("/videos")}>
                     Estudar
                 </button>
@@ -19,36 +19,50 @@ export default function StartScreen() {
                     Praticar
                 </button>
             </Botoes>
-
         </Container>
     )
 }
 
 const Container = styled.div`
     display: flex;
+    font-family: 'Signika', sans-serif;
+    width: 100vw;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
-    button{
-        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-        border: none;
-        width: 200px;
-        height: 100px;
-        border-radius: 10px;
-        cursor: pointer;
-        &:hover{
-            background-color: #EBEBEB;
-        }
-        margin: 20px 0;
+    background-color: #EBEBEB;
+    
+    h1{
+        margin-top: 150px;
+        color: #444040;
+        font-size: 24px;
     }
 `
 
 const Botoes = styled.div`
-    margin-top: 130px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     width: 100vw;
+    button{
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        border: none;
+        width: 300px;
+        height: 100px;
+        color: #444040;
+        font-size: 25px;
+        border-radius: 10px;
+        background-color: white;
+        font-family: 'Signika', sans-serif;
+        cursor: pointer;
+        &:hover{
+            background-color: #E1E1E1;
+            color: #5A5A5A;
+        }
+        margin: 20px 0;
+    }
 `
 
 const Topo = styled.div`
@@ -57,7 +71,7 @@ const Topo = styled.div`
     justify-content: center;
     height: 120px;
     width: 100vw;
-    background: #4772A5;
+    background: #0097F6;
     position: absolute;
     right: 0;
     top: 0;
